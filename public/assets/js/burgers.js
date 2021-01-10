@@ -4,15 +4,13 @@ $(function () {
 
     var newBurger = {
       burger: $("#newBurg").val().trim(),
-      devoured: 0
+      devoured: 0,
     };
-
-   
 
     // Send the POST request.
     $.ajax("/api/burgers", {
       type: "POST",
-      data: newBurger
+      data: newBurger,
     }).then(function () {
       console.log("added a burger", newBurger);
       // Reload the page to get the updated list
@@ -24,7 +22,7 @@ $(function () {
     event.preventDefault();
     var id = $(this).data("id");
     var devouredState = {
-      devoured: 1
+      devoured: 1,
     };
 
     // Send the PUT request.
@@ -34,6 +32,17 @@ $(function () {
     }).then(function () {
       console.log("Burger has been devoured");
       // Reload the page to get the updated list
+      location.reload();
+    });
+  });
+
+  $(".burgereaten").on("click", function (event) {
+    var id = $(this).data("id");
+
+    $.ajax("/api/burgers/" + id, {
+      type: "DELETE"
+    }).then(function () {
+      console.log("burger in trash");
       location.reload();
     });
   });

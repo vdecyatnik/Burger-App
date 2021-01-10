@@ -1,53 +1,109 @@
-<h1>BURGERS</h1>
-<div>
-<h2>Burgers that have not been devoured!</h2>
+<div class="jumbotron jumbotron-fluid">
+  <div class="container">
 
-<ul>
-  {{#each burgers}}
-  {{#unless devoured}}
+    <p class="lead">Which Burger would you like to Devour?</p>
 
-<li>
+
+    <form class="create-form">
+
+
+      <div class="form-group">
+        <label for="newBurg">Enter Burger Here:</label>
+        <input type="text" id="newBurg" name="burger">
+      </div>
+
+
+
+      <button type="submit" class="btn btn-warning">Add Burger</button>
+    </form>
+
+
+  </div>
+</div>
+
+
+
+<div class="container">
+  <div class="row">
+    <div class="col">
+
+
+
+
+      <div class="card">
+  <div class="card-body">
     
 
-  {{this.id}} {{this.burger}}
-    <button class="burgereat" data-id="{{this.id}}" data-newBurger="{{devoured}}" >
-      
-     Devour! 
-    </button>
 
-  </li>
 
-  {{/unless}}
-  {{/each}}
-</ul>
+<p>Burgers that have not been devoured!</p>
 
-<h2>Burgers that have been Devoured!</h2>
+      <ul>
+        {{#each burgers}}
+        {{#unless devoured}}
 
-<ul>
-  {{#each burgers}}
-  {{#if devoured}}
+        <li>
 
-<li>
-    {{this.id}} {{this.burger}} 
+          {{this.burger}}
+          <button class="burgereat" data-id="{{this.id}}" data-newBurger="{{devoured}}">
 
-   
+            Devour!
+          </button>
 
-  </li>
+        </li>
 
- 
-  {{/if}}
-  {{/each}}
-</ul>
+        {{/unless}}
+        {{/each}}
+      </ul>
+    </div>
 
-<h2>Which Burger would you like to Devour?</h2>
-<form class="create-form">
 
-  <div class="form-group">
-    <label for="newBurg">Enter Burger Here:</label>
-    <input type="text" id="newBurg" name="burger">
+
+
+
+
+  </div>
+</div>
+
+
+
+
+
+
+<div class="col">
+
+     <div class="card">
+    <div class="card-body">
+
+
+
+
+      <p>Burgers that have been Devoured!</p>
+
+      <ul>
+        {{#each burgers}}
+        {{#if devoured}}
+
+        <li>
+          {{this.burger}}
+      </li>
+
+
+        {{/if}}
+        {{/each}}
+      </ul>
+        </div>
   </div>
 
-  
 
-  <button type="submit">Add Burger</button>
-</form>
+
+
+
+  </div>
+</div>
+
+
+
+
+
+

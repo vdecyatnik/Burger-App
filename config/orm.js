@@ -43,7 +43,11 @@ var orm = {
     });
   },
   create: function (table, cols, vals, cb) {
+
+    // var queryString= "INSERT INTO burgers SET ? WHERE id = ? VALUES (?,?) "
     var queryString = "INSERT INTO " + table;
+
+    
 
     queryString += " (";
     queryString += cols.toString();
@@ -64,6 +68,8 @@ var orm = {
   },
   // An example of objColVals would be {name: panther, sleepy: true}
   update: function (table, objColVals, condition, cb) {
+   
+
     var queryString = "UPDATE " + table;
 
     queryString += " SET ";

@@ -7,7 +7,7 @@ $(function () {
       devoured: 0,
     };
 
-    // Send the POST request.
+    // Send the POST request. Insert new burger into database.
     $.ajax("/api/burgers", {
       type: "POST",
       data: newBurger,
@@ -25,7 +25,7 @@ $(function () {
       devoured: 1,
     };
 
-    // Send the PUT request.
+    // Send the PUT request. Send devoured burger to devoured list.
     $.ajax("/api/burgers/" + id, {
       type: "PUT",
       data: devouredState,
@@ -35,7 +35,8 @@ $(function () {
       location.reload();
     });
   });
-
+ 
+  // Delete devoured burger from database.
   $(".burgereaten").on("click", function (event) {
     var id = $(this).data("id");
 

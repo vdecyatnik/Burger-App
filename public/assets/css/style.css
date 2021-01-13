@@ -1,1 +1,21 @@
 
+body{
+    background-image:url("/img/2204.jpeg");
+    background-size: cover;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-position: center center;
+}
+
+.jumbotron {
+    background: rgb(55, 21, 133); /* This is for ie8 and below */
+    background: rgba(142, 161, 187, 0.5); 
+    
+ }
+
+
+ .card{
+    background: rgb(200, 54, 54); /* This is for ie8 and below */
+    background: rgba(123, 102, 180, 0.5);
+    
+ }

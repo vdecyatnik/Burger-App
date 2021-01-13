@@ -1,18 +1,18 @@
+<div class="jumbotron ">
 
-<div class="jumbotron jumbotron-fluid " >
   <div class="container">
-  
-    
-
-    <p class="lead">Which Burger would you like to Devour?</p>
 
 
 
-<form class="create-form">
+    <p class="lead text-white font-weight-bold">Which Burger would you like to Devour?</p>
+
+
+
+    <form class="create-form">
 
 
       <div class="form-group">
-        <label for="newBurg">Enter Burger Here:</label>
+        <label for="newBurg" class="text-white font-weight-bold">Enter Burger Here:</label>
         <input type="text" id="newBurg" name="burger">
       </div>
 
@@ -24,6 +24,7 @@
   </div>
 </div>
 
+
 <div class="container">
   <div class="row">
     <div class="col">
@@ -32,74 +33,69 @@
 
 
       <div class="card">
-  <div class="card-body">
-    
+        <div class="card-body">
 
 
 
-<p>Burgers that have not been devoured!</p>
 
-      <ul>
-        {{#each burgers}}
-        {{#unless devoured}}
+          <p class="text-white font-weight-bold">Burgers that have not been devoured!</p>
 
-        <li>
+          <ul>
+            {{#each burgers}}
+            {{#unless devoured}}
 
-          {{this.burger}}
-          <button class="burgereat btn btn-success btn-sm pb-0 pt-0" data-id="{{this.id}}" data-newBurger="{{devoured}}">
+            <li class="text-white font-weight-bold">
 
-            Devour!
-          </button>
+              {{this.burger}}
+              <button class="burgereat btn btn-success btn-sm pb-0 pt-0" data-id="{{this.id}}"
+                data-newBurger="{{devoured}}">
 
-        </li>
+                Devour!
+              </button>
 
-        {{/unless}}
-        {{/each}}
-      </ul>
+            </li>
+
+            {{/unless}}
+            {{/each}}
+          </ul>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="col">
+
+      <div class="card">
+        <div class="card-body">
+
+
+
+
+          <p class="text-white font-weight-bold">Burgers that have been Devoured!</p>
+
+          <ul>
+            {{#each burgers}}
+            {{#if devoured}}
+
+            <li class="text-white font-weight-bold">
+              {{this.burger}}
+
+
+              <button class="burgereaten btn btn-danger btn-sm pb-0 pt-0" data-id="{{this.id}}">
+
+                Trash!
+              </button>
+            </li>
+
+            {{/if}}
+            {{/each}}
+          </ul>
+        </div>
+      </div>
+
+
+
+
+
     </div>
   </div>
-</div>
-
-
-<div class="col">
-
-     <div class="card">
-    <div class="card-body">
-
-
-
-
-      <p>Burgers that have been Devoured!</p>
-
-      <ul>
-        {{#each burgers}}
-        {{#if devoured}}
-
-        <li>
-          {{this.burger}}
-      
-           
-          <button class="burgereaten btn btn-danger btn-sm pb-0 pt-0" data-id="{{this.id}}">
-
-            Trash!
-          </button>
-  </li>
-
-        {{/if}}
-        {{/each}}
-      </ul>
-        </div>
-  </div>
-
-
-
-
-
-  </div>
-</div>
-
-
-
-
-
-

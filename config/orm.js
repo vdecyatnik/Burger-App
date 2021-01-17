@@ -1,8 +1,5 @@
 const connection = require("../config/connection.js");
 
-// File that holds the SQl query strings.
-
-
 // Helper functions to pass ? as values into the SQL query string.
 function printQuestionMarks(num) {
   var arr = [];
@@ -29,12 +26,10 @@ function objToSql(ob) {
     }
   }
 
-  
   return arr.toString();
 }
 
-// Sequel Query Strings
-
+// MYSQL Query Strings
 
 var orm = {
   all: function (tableInput, cb) {
@@ -59,7 +54,7 @@ var orm = {
       cb(result);
     });
   },
- 
+
   update: function (table, objColVals, condition, cb) {
     var queryString = "UPDATE " + table;
 
